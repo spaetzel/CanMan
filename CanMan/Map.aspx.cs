@@ -23,6 +23,12 @@ namespace CanMan
 
                 var repository = SharpSpeed.SharpSpeedRepository.Instance;
 
+                var user = repository.GetPerson(username);
+
+                var prefix = "http://sized.castroller.com/" + 48 + "/" + 48 + "/";
+                userImage.ImageUrl = user.PhotoUrl.Replace("http://", prefix);
+                userLink.NavigateUrl = user.Url;
+
                 var routes = repository.GetRoutes(username);
 
 

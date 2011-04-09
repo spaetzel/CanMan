@@ -298,3 +298,15 @@ div.accountInfo
     width: 920px;
     height: 500px;
 }
+
+#pageHeader
+{
+    height: 48px;
+    margin-bottom: 15px;
+}
+
+#userImage
+{
+    float: left;
+    margin-right: 10px;
+}

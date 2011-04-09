@@ -40,6 +40,24 @@ namespace CanMan {
         protected global::System.Web.UI.WebControls.Literal setPointsLiteral;
         
         /// <summary>
+        /// userLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink userLink;
+        
+        /// <summary>
+        /// userImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image userImage;
+        
+        /// <summary>
         /// heading control.
         /// </summary>
         /// <remarks>

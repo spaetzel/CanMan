@@ -17,12 +17,20 @@ namespace CanMan
 
                 if (!string.IsNullOrEmpty(username))
                 {
+                    var repository = SharpSpeed.SharpSpeedRepository.Instance;
+
+                    var user = repository.GetPerson(username);
+
+                    var prefix = "http://sized.castroller.com/" + 48 + "/" + 48 + "/";
+                    userImage.ImageUrl = user.PhotoUrl.Replace("http://", prefix);
+                    userLink.NavigateUrl = user.Url;
+
+                    
                     Page.Title = String.Format("{0}'s routes - CanMan", username);
 
                     heading.InnerText = String.Format("{0}'s dailymile routes", username);
 
-                    var repository = SharpSpeed.SharpSpeedRepository.Instance;
-
+                
                     var routes = repository.GetRoutes(username);
 
                     routesList.DataSource = from r in routes

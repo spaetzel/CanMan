@@ -53,7 +53,12 @@ $(function () {
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+    <div id="pageHeader">
+    <asp:HyperLink ID="userLink" runat="server">
+        <asp:Image ID="userImage" runat="server" ClientIDMode="Static"/>
+    </asp:HyperLink>
     <h2 id="heading" runat="server">Map</h2>
-    
+    </div>
+
     <div id="map_canvas"></div>
 </asp:Content>
