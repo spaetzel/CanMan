@@ -59,9 +59,9 @@ namespace CanMan
 
             var markers = from curListing in results
                           select String.Format(@"
-                                var myLatlng = new google.maps.LatLng({2},{3});
+                                var myLatlng{4} = new google.maps.LatLng({2},{3});
 
-var contentString = '<div id=\'content\'>'+
+var contentString{4} = '<div id=\'content\'>'+
     '<div id=\'siteNotice\'>'+
     '</div>'+
     '<h1 id=\'firstHeading\' class=\'firstHeading\'>{0}</h1>'+
@@ -70,19 +70,19 @@ var contentString = '<div id=\'content\'>'+
     '</div>'+
     '</div>';
 
-var infowindow = new google.maps.InfoWindow({{
-    content: contentString
+var infowindow{4} = new google.maps.InfoWindow({{
+    content: contentString{4}
 }});
 
-var marker = new google.maps.Marker({{
-    position: myLatlng,
+var marker{4} = new google.maps.Marker({{
+    position: myLatlng{4},
     map: map,
     title:'{0}'
 }});
 
-google.maps.event.addListener(marker, 'click', function() {{
-  infowindow.open(map,marker);
-}});", curListing.Name, curListing.Address, curListing.GeoCode.Latitude, curListing.GeoCode.Longitude);
+google.maps.event.addListener(marker{4}, 'click', function() {{
+  infowindow{4}.open(map,marker{4});
+}});", curListing.Name.Replace("'", "\\'"), curListing.Address.Street, curListing.GeoCode.Latitude, curListing.GeoCode.Longitude, curListing.Id);
 
 
             setPointsLiteral.Text = String.Join("\n", markers.ToArray());
