@@ -24,7 +24,11 @@ namespace CanMan
         {
 
 
-            routes.MapPageRoute("User routes", "{username}", "~/Routes.aspx");
+            routes.Ignore("{resource}.axd/{*pathInfo}");
+
+            routes.MapPageRoute("User routes", "{username}", "~/Routes.aspx", true, null,
+                new RouteValueDictionary { { "username", "[a-zA-Z].*" } });
+
             routes.MapPageRoute("Route map", "{username}/{routeId}", "~/Map.aspx");
         }
 

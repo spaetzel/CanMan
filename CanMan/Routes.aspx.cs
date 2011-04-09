@@ -11,24 +11,30 @@ namespace CanMan
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string username = Page.RouteData.Values["username"].ToString();
+            if (Page.RouteData.Values["username"] != null)
+            {
+                string username = Page.RouteData.Values["username"].ToString();
 
-            Page.Title = String.Format("{0}'s routes - CanMan", username);
+                if (!string.IsNullOrEmpty(username))
+                {
+                    Page.Title = String.Format("{0}'s routes - CanMan", username);
 
-            heading.InnerText = String.Format("{0}'s dailymile routes", username);
+                    heading.InnerText = String.Format("{0}'s dailymile routes", username);
 
-            var repository = SharpSpeed.SharpSpeedRepository.Instance;
+                    var repository = SharpSpeed.SharpSpeedRepository.Instance;
 
-            var routes = repository.GetRoutes(username);
+                    var routes = repository.GetRoutes(username);
 
-            routesList.DataSource = from r in routes
-                                    select new
-                                    {
-                                        Name = r.Name,
-                                        Id = r.Id,
-                                        Username = username
-                                    };
-            routesList.DataBind();
+                    routesList.DataSource = from r in routes
+                                            select new
+                                            {
+                                                Name = r.Name,
+                                                Id = r.Id,
+                                                Username = username
+                                            };
+                    routesList.DataBind();
+                }
+            }
         }
     }
 }
