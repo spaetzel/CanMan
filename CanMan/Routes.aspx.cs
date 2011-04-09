@@ -13,11 +13,21 @@ namespace CanMan
         {
             string username = Page.RouteData.Values["username"].ToString();
 
+            Page.Title = String.Format("{0}'s routes - CanMan", username);
+
+            heading.InnerText = String.Format("{0}'s dailymile routes", username);
+
             var repository = SharpSpeed.SharpSpeedRepository.Instance;
 
             var routes = repository.GetRoutes(username);
 
-            routesList.DataSource = routes;
+            routesList.DataSource = from r in routes
+                                    select new
+                                    {
+                                        Name = r.Name,
+                                        Id = r.Id,
+                                        Username = username
+                                    };
             routesList.DataBind();
         }
     }

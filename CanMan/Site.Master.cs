@@ -13,5 +13,14 @@ namespace CanMan
         {
 
         }
+
+        public Menu Menu
+        {
+            get
+            {
+                return NavigationMenu;
+            }
+
+        }
     }
 }

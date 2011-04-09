@@ -25,8 +25,20 @@ namespace CanMan
 
                 var routes = repository.GetRoutes(username);
 
+
                 var route = routes.FirstOrDefault(r => r.Id == routeId);
 
+                Page.Title = String.Format("{0} - CanMan", route.Name);
+
+                heading.InnerText = String.Format("{0}'s {1} route", username, route.Name );
+
+
+                Master.Menu.Items.Add(new MenuItem()
+                {
+                    Text = String.Format("All of {0}'s routes", username),
+                    NavigateUrl = String.Format("/{0}", username)
+                });
+            
 
                 var coordinates = repository.GetRoute(routeId);
 
@@ -42,8 +54,13 @@ namespace CanMan
                 
                 var categories = System.Configuration.ConfigurationManager.AppSettings["Categories"].Split(',');
 
+                var midIndex = (int)Math.Round(coordinates.Count() / 2.0);
 
-                var address = Geocoder.GetAddress(coordinates.First()[0], coordinates.First()[1]);
+                var midPoint = coordinates.ElementAt( midIndex );
+
+                midPointLiteral.Text = latLns.ElementAt(midIndex);
+
+                var address = Geocoder.GetAddress(midPoint[0], midPoint[1]);
 
                 List<Listing> allResults = new List<Listing>();
 
@@ -52,7 +69,9 @@ namespace CanMan
                     allResults.AddRange(YellowSharp.FindBusinesses(curCategory, address));
                 }
 
-                var result = allResults.Distinct<Listing>();
+                var result = from l in allResults.Distinct<Listing>()
+                             where l.Address != null && l.GeoCode != null
+                             select l;
 
                 FindBusinessComplete(result);
 
@@ -94,13 +113,18 @@ if( lastWindow != null )
 }}
   infowindow{4}.open(map,marker{4});
 lastWindow = infowindow{4};
-}});", curListing.Name.Replace("'", "\\'"), curListing.Address.Street, curListing.GeoCode.Latitude, curListing.GeoCode.Longitude, curListing.Id);
+}});", CleanString(curListing.Name), CleanString( curListing.Address.Street), curListing.GeoCode.Latitude, curListing.GeoCode.Longitude, curListing.Id);
 
 
             setPointsLiteral.Text = String.Join("\n", markers.ToArray());
 
 
         
+        }
+
+        private string CleanString(string input)
+        {
+            return input.Replace("'", "\\'");
         }
     }
 }

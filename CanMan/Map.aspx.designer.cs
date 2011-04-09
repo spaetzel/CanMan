@@ -22,6 +22,15 @@ namespace CanMan {
         protected global::System.Web.UI.WebControls.Literal routePointsLiteral;
         
         /// <summary>
+        /// midPointLiteral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal midPointLiteral;
+        
+        /// <summary>
         /// setPointsLiteral control.
         /// </summary>
         /// <remarks>
@@ -29,5 +38,26 @@ namespace CanMan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal setPointsLiteral;
+        
+        /// <summary>
+        /// heading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl heading;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new CanMan.SiteMaster Master {
+            get {
+                return ((CanMan.SiteMaster)(base.Master));
+            }
+        }
     }
 }

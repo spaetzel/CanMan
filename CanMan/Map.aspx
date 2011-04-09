@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Map.aspx.cs" Inherits="CanMan.Map" %>
+<%@ MasterType VirtualPath="~/Site.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
@@ -18,7 +19,7 @@ var infowindow = new google.maps.InfoWindow();
 function initializeMap() {
     var myOptions = {
         zoom: 14,
-        center: routePoints[0],
+        center: <asp:Literal id="midPointLiteral" runat="server"/>,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
@@ -52,7 +53,7 @@ $(function () {
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h2>Map</h2>
+    <h2 id="heading" runat="server">Map</h2>
     
-    <div id="map_canvas" width="500px" height="500px"></div>
+    <div id="map_canvas"></div>
 </asp:Content>

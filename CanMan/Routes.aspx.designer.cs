@@ -13,6 +13,15 @@ namespace CanMan {
     public partial class Routes {
         
         /// <summary>
+        /// heading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl heading;
+        
+        /// <summary>
         /// routesList control.
         /// </summary>
         /// <remarks>
@@ -20,5 +29,17 @@ namespace CanMan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView routesList;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new CanMan.SiteMaster Master {
+            get {
+                return ((CanMan.SiteMaster)(base.Master));
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="Welcome to CanMan" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="Default.aspx.cs" Inherits="CanMan._Default" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">

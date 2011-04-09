@@ -8,6 +8,7 @@
         About
     </h2>
     <p>
-        Put content here.
+        CanMan is the runner's best friend. Plan out your routes on <a href="http://dailymile.com">dailymile</a>
+        and use CanMan to find out where the washrooms are along the route.
     </p>
 </asp:Content>
