@@ -9,7 +9,7 @@
 var routePoints = [<asp:Literal id="routePointsLiteral" runat="server"/>];
  
 var initialLocation;
-
+var lastWindow;
 
 var browserSupportFlag =  new Boolean();
 var map;

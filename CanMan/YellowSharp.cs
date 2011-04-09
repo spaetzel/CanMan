@@ -77,7 +77,7 @@ namespace CanMan
             try
             {
 
-                string url = String.Format("http://api.sandbox.yellowapi.com/FindBusiness/?what={0}&where={1}&fmt=JSON&pgLen=10&apikey={2}&UID=127.0.0.1", what, where, ApiKey);
+                string url = String.Format("http://api.sandbox.yellowapi.com/FindBusiness/?what={0}&where={1}&fmt=JSON&pgLen=40&apikey={2}&UID=127.0.0.1", what, where, ApiKey);
 
                 using (var resp = ProcessRequest(url))
                 {

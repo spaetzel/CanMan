@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 namespace CanMan
 {
     [JsonObject]
-    public class Listing
+    public class Listing : IComparable
     {
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public int Id { get; set; }
@@ -20,5 +20,19 @@ namespace CanMan
 
         [JsonProperty("geoCode", NullValueHandling = NullValueHandling.Ignore)]
         public GeoCode GeoCode { get; set; }
+
+        public int CompareTo(object obj)
+        {
+            Listing converted = obj as Listing;
+
+            if (converted != null )
+            {
+                return converted.Id - this.Id;
+            }
+            else
+            {
+                return 1;
+            }
+        }
     }
 }

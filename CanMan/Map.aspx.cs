@@ -45,7 +45,14 @@ namespace CanMan
 
                 var address = Geocoder.GetAddress(coordinates.First()[0], coordinates.First()[1]);
 
-                var result = YellowSharp.FindBusinesses(categories.First(), address);
+                List<Listing> allResults = new List<Listing>();
+
+                foreach (var curCategory in categories)
+                {
+                    allResults.AddRange(YellowSharp.FindBusinesses(curCategory, address));
+                }
+
+                var result = allResults.Distinct<Listing>();
 
                 FindBusinessComplete(result);
 
@@ -54,7 +61,7 @@ namespace CanMan
         }
 
 
-        private void FindBusinessComplete(SearchResult results)
+        private void FindBusinessComplete(IEnumerable<Listing> results)
         {
 
             var markers = from curListing in results
@@ -81,7 +88,12 @@ var marker{4} = new google.maps.Marker({{
 }});
 
 google.maps.event.addListener(marker{4}, 'click', function() {{
+if( lastWindow != null )
+{{
+    lastWindow.close();
+}}
   infowindow{4}.open(map,marker{4});
+lastWindow = infowindow{4};
 }});", curListing.Name.Replace("'", "\\'"), curListing.Address.Street, curListing.GeoCode.Latitude, curListing.GeoCode.Longitude, curListing.Id);
 
 
