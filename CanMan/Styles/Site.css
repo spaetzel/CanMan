@@ -292,3 +292,9 @@ div.accountInfo
     text-align: right;
     padding-right: 10px;
 }
+
+#map_canvas
+{
+    width: 500px;
+    height: 500px;
+}
