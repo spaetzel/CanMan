@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="CanMan">
+</Property><Property Name="Solution File" Value="C:\Users\wspaetzel\Documents\Projects\CanMan\CanMan.sln">
+</Property><Property Name="Date" Value="April-09-11">
+</Property><Property Name="Time" Value="13:24:48 PM">
+</Property></Properties><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\GMapGeocoder.csproj" Description="Project file successfully backed up as C:\Users\wspaetzel\Documents\Projects\CanMan\Backup\GMapGeocoder.csproj">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\AccuracyOptions.cs" Description="File successfully backed up as C:\Users\wspaetzel\Documents\Projects\CanMan\Backup\AccuracyOptions.cs">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\api.cs" Description="File successfully backed up as C:\Users\wspaetzel\Documents\Projects\CanMan\Backup\api.cs">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\Containers\Point.cs" Description="File successfully backed up as C:\Users\wspaetzel\Documents\Projects\CanMan\Backup\Containers\Point.cs">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\Containers\Results.cs" Description="File successfully backed up as C:\Users\wspaetzel\Documents\Projects\CanMan\Backup\Containers\Results.cs">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\wspaetzel\Documents\Projects\CanMan\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\Containers\USAddress.cs" Description="File successfully backed up as C:\Users\wspaetzel\Documents\Projects\CanMan\Backup\Containers\USAddress.cs">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\StatusCodeOptions.cs" Description="File successfully backed up as C:\Users\wspaetzel\Documents\Projects\CanMan\Backup\StatusCodeOptions.cs">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\Util.cs" Description="File successfully backed up as C:\Users\wspaetzel\Documents\Projects\CanMan\Backup\Util.cs">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\api.xsd" Description="File successfully backed up as C:\Users\wspaetzel\Documents\Projects\CanMan\Backup\api.xsd">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\api.xsx" Description="File successfully backed up as C:\Users\wspaetzel\Documents\Projects\CanMan\Backup\api.xsx">
+</Event><Event ErrorLevel="1" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\GMapGeocoder.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\GMapGeocoder.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\GMapGeocoder.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GMapGeocoder" Source="..\..\..\My Downloads\GMapGeocoder\GMapGeocoder\GMapGeocoder.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

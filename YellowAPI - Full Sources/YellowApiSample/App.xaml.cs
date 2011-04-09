@@ -65,13 +65,13 @@ namespace YellowApiSample
       // Phone-specific initialization
       InitializePhoneApplication();
 
-      #error You must enter your YellowAPI application key below
+
       // In order to use YellowAPI, you must apply for an application key by visiting
       // http://www.yellowapi.com/member/register and create an account. Once your account 
       // is created and validated, you can visit http://www.yellowapi.com/member/my-account
       // to view your sandbox and production keys. Simply copy the appropriate key below
       // to test this sample.
-      YellowApiHelper.ApplicationKey = "YOUR YELLOWAPI APPLICATION KEY";
+      YellowApiHelper.ApplicationKey = "crds3fc5v3hzaehdgn8gte3s";
 
       YellowApiHelper.UseSandBox = true;
       YellowApiHelper.UserUniqueID = "YellowAPI Sample";

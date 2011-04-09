@@ -17,7 +17,7 @@ var infowindow = new google.maps.InfoWindow();
   
 function initializeMap() {
     var myOptions = {
-        zoom: 8,
+        zoom: 14,
         center: routePoints[0],
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };

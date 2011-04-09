@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://earth.google.com/kml/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://tempuri.org/api.xsd" xmlns:tns="http://earth.google.com/kml/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+  <xs:complexType name="kml">
+    <xs:all>
+      <xs:element name="Response" type="tns:Response" />     
+    </xs:all>    
+  </xs:complexType>
+  
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" maxOccurs="1" />
+      <xs:element name="Status" type="tns:Status" maxOccurs="1" />
+      <xs:element name="Placemark" type="tns:Placemark" maxOccurs="unbounded"/>
+    </xs:sequence>                  
+  </xs:complexType>
+
+  <xs:complexType name="Status">
+    <xs:all>
+      <xs:element name="code" type="xs:int" />
+      <xs:element name="request" type="xs:string" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="Placemark">
+    <xs:all>
+      <xs:element name="address" type="xs:string" />
+      <xs:element name="AddressDetails" type="tns:AddressDetails" />
+      <xs:element name="Point" type="tns:Point" />
+    </xs:all>
+    <xs:attribute name="id" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="AddressDetails">   
+    <xs:all>
+      <xs:element name="Country" type="tns:Country" />
+    </xs:all>
+    <xs:attribute name="Accuracy" type="xs:int" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="Country">
+    <xs:all>
+      <xs:element name="CountryNameCode" type="xs:string" />
+      <xs:element name="AdministrativeArea" type="tns:AdministrativeArea" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="AdministrativeArea">
+    <xs:all>
+      <xs:element name="AdministrativeAreaName" type="xs:string" />
+      <xs:element name="SubAdministrativeArea" type="tns:SubAdministrativeArea" minOccurs="0" />
+      <xs:element name="Locality" type="tns:Locality" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="SubAdministrativeArea">
+    <xs:all>
+      <xs:element name="SubAdministrativeAreaName" type="xs:string" />
+      <xs:element name="Locality" type="tns:Locality" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="Locality">
+    <xs:all>
+      <xs:element name="LocalityName" type="xs:string" />
+      <xs:element name="Thoroughfare" type="tns:Thoroughfare" />
+      <xs:element name="PostalCode" type="tns:PostalCode" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="Thoroughfare">
+    <xs:all>
+      <xs:element name="ThoroughfareName" type="xs:string" />      
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="PostalCode">
+    <xs:all>
+      <xs:element name="PostalCodeNumber" type="xs:string" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="Point">
+    <xs:all>
+      <xs:element name="coordinates" type="xs:string" />      
+    </xs:all>
+  </xs:complexType>
+
+  <xs:element name="kml" type="tns:kml" />
+  <xs:element name="Response" type="tns:Response" />
+  <xs:element name="Status" type="tns:Status" />
+  <xs:element name="Placemark" type="tns:Placemark" />
+  <xs:element name="AddressDetails" type="tns:AddressDetails" />
+  <xs:element name="Point" type="tns:Point" />
+  <xs:element name="Country" type="tns:Country" />
+  <xs:element name="AdministrativeArea" type="tns:AdministrativeArea" />
+  <xs:element name="SubAdministrativeArea" type="tns:SubAdministrativeArea" />
+  <xs:element name="Locality" type="tns:Locality" />
+  <xs:element name="Thoroughfare" type="tns:Thoroughfare" />
+  <xs:element name="PostalCode" type="tns:PostalCode" />
+  
+</xs:schema>

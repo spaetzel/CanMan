@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using YellowPages.YellowApi;
+using System.Configuration;
 
 namespace CanMan
 {
@@ -33,7 +35,32 @@ namespace CanMan
                 routePointsLiteral.Text = String.Join(",", latLns.ToArray());
 
 
+
+                YellowApiHelper.ApplicationKey = "crds3fc5v3hzaehdgn8gte3s";
+
+                YellowApiHelper.UseSandBox = true;
+                YellowApiHelper.UserUniqueID = "YellowAPI Sample";
+
+                var categories = System.Configuration.ConfigurationManager.AppSettings["Categories"].Split(',');
+
+
+                var address = Geocoder.GetAddress(coordinates.First()[0], coordinates.First()[1]);
+
+                YellowApiHelper.FindBusinessAsync(categories.First(), address, 0, YellowApiLanguage.English,
+                    YellowApiFlags.None,
+                    new YellowApiCallback<SearchResults>(this.FindBusinessComplete),
+          null
+          );
+    
+                
             }
+
+        }
+
+
+        private void FindBusinessComplete(SearchResults results, Exception except)
+        {
+           
         }
     }
 }
