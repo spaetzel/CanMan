@@ -25,9 +25,12 @@ namespace CanMan
                 var route = routes.FirstOrDefault(r => r.Id == routeId);
 
                 
-                string gpxString =  repository.GetRouteGpx(routeId);
+                var coordinates =  repository.GetRoute(routeId);
 
-                gpx.Value = gpxString;
+                var latLns = from c in coordinates
+                             select String.Format("new google.maps.LatLng({0}, {1})", c[0], c[1]);
+
+                routePointsLiteral.Text = String.Join(",", latLns.ToArray());
 
 
             }

@@ -57,6 +57,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Map.aspx" />
     <Content Include="Routes.aspx" />
+    <Content Include="Scripts\loadgpx.4.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />

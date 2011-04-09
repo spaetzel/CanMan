@@ -13,12 +13,12 @@ namespace CanMan {
     public partial class Map {
         
         /// <summary>
-        /// gpx control.
+        /// routePointsLiteral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField gpx;
+        protected global::System.Web.UI.WebControls.Literal routePointsLiteral;
     }
 }
