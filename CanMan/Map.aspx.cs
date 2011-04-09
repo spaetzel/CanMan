@@ -66,13 +66,23 @@ namespace CanMan
 
                 midPointLiteral.Text = latLns.ElementAt(midIndex);
 
-                var address = Geocoder.GetAddress(midPoint[0], midPoint[1]);
+                
+                List<double[]> findPoints = new List<double[]>(){
+                    coordinates.First(),
+                    midPoint,
+                    coordinates.Last()
+                };
 
                 List<Listing> allResults = new List<Listing>();
 
-                foreach (var curCategory in categories)
+                foreach (var curPoint in findPoints)
                 {
-                    allResults.AddRange(YellowSharp.FindBusinesses(curCategory, address));
+                    var address = Geocoder.GetAddress(curPoint[0], curPoint[1]);
+
+                    foreach (var curCategory in categories)
+                    {
+                        allResults.AddRange(YellowSharp.FindBusinesses(curCategory, address));
+                    }
                 }
 
                 var result = from l in allResults.Distinct<Listing>()
@@ -81,6 +91,9 @@ namespace CanMan
 
                 FindBusinessComplete(result);
 
+                var joinedCategories = String.Join(", ", categories.Take(categories.Length-1).ToArray());
+
+                categoriesLabel.Text = String.Format("{0} and {1}", joinedCategories, categories.Last());
             }
 
         }

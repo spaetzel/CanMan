@@ -61,4 +61,5 @@ $(function () {
     </div>
 
     <div id="map_canvas"></div>
+    <p>Using the <a href="http://www.yellowapi.ca">YellowApi</a> to display nearby <asp:Label ID="categoriesLabel" runat="server" /></p>
 </asp:Content>
