@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using YellowPages.YellowApi;
 using System.Configuration;
+
+using System.Device;
 
 namespace CanMan
 {
@@ -26,8 +27,8 @@ namespace CanMan
 
                 var route = routes.FirstOrDefault(r => r.Id == routeId);
 
-                
-                var coordinates =  repository.GetRoute(routeId);
+
+                var coordinates = repository.GetRoute(routeId);
 
                 var latLns = from c in coordinates
                              select String.Format("new google.maps.LatLng({0}, {1})", c[0], c[1]);
@@ -35,32 +36,59 @@ namespace CanMan
                 routePointsLiteral.Text = String.Join(",", latLns.ToArray());
 
 
+                YellowSharp.ApiKey = "crds3fc5v3hzaehdgn8gte3s";
 
-                YellowApiHelper.ApplicationKey = "crds3fc5v3hzaehdgn8gte3s";
-
-                YellowApiHelper.UseSandBox = true;
-                YellowApiHelper.UserUniqueID = "YellowAPI Sample";
-
+                YellowSharp.UseSandbox = true;
+                
                 var categories = System.Configuration.ConfigurationManager.AppSettings["Categories"].Split(',');
 
 
                 var address = Geocoder.GetAddress(coordinates.First()[0], coordinates.First()[1]);
 
-                YellowApiHelper.FindBusinessAsync(categories.First(), address, 0, YellowApiLanguage.English,
-                    YellowApiFlags.None,
-                    new YellowApiCallback<SearchResults>(this.FindBusinessComplete),
-          null
-          );
-    
-                
+                var result = YellowSharp.FindBusinesses(categories.First(), address);
+
+                FindBusinessComplete(result);
+
             }
 
         }
 
 
-        private void FindBusinessComplete(SearchResults results, Exception except)
+        private void FindBusinessComplete(SearchResult results)
         {
-           
+
+            var markers = from curListing in results
+                          select String.Format(@"
+                                var myLatlng = new google.maps.LatLng({2},{3});
+
+var contentString = '<div id=\'content\'>'+
+    '<div id=\'siteNotice\'>'+
+    '</div>'+
+    '<h1 id=\'firstHeading\' class=\'firstHeading\'>{0}</h1>'+
+    '<div id=\'bodyContent\'>'+
+    '<p>{1}</p>'+
+    '</div>'+
+    '</div>';
+
+var infowindow = new google.maps.InfoWindow({{
+    content: contentString
+}});
+
+var marker = new google.maps.Marker({{
+    position: myLatlng,
+    map: map,
+    title:'{0}'
+}});
+
+google.maps.event.addListener(marker, 'click', function() {{
+  infowindow.open(map,marker);
+}});", curListing.Name, curListing.Address, curListing.GeoCode.Latitude, curListing.GeoCode.Longitude);
+
+
+            setPointsLiteral.Text = String.Join("\n", markers.ToArray());
+
+
+        
         }
     }
 }

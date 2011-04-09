@@ -9,8 +9,8 @@
 var routePoints = [<asp:Literal id="routePointsLiteral" runat="server"/>];
  
 var initialLocation;
-var siberia = new google.maps.LatLng(60, 105);
-var newyork = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
+
+
 var browserSupportFlag =  new Boolean();
 var map;
 var infowindow = new google.maps.InfoWindow();
@@ -43,6 +43,8 @@ $(function () {
 
   route.setMap(map);
 
+    
+    <asp:Literal id="setPointsLiteral" runat="server"/>
 });
 </script> 
 

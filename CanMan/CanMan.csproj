@@ -41,6 +41,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -79,6 +80,7 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Address.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -86,10 +88,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GeoCode.cs" />
     <Compile Include="Geocoder.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Listing.cs" />
     <Compile Include="Map.aspx.cs">
       <DependentUpon>Map.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,6 +109,7 @@
     <Compile Include="Routes.aspx.designer.cs">
       <DependentUpon>Routes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SearchResult.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -112,6 +117,7 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="YellowSharp.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -123,10 +129,6 @@
     <ProjectReference Include="..\..\SharpSpeed\SharpSpeed\SharpSpeed.csproj">
       <Project>{D9584740-5AEE-4631-A4CD-7066EF4EC532}</Project>
       <Name>SharpSpeed</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\YellowAPI - Full Sources\YellowApiLib\YellowApiLib.csproj">
-      <Project>{A9FF92CE-F6BA-4ADC-B378-FE865D54F6BC}</Project>
-      <Name>YellowApiLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
