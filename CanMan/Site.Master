@@ -14,14 +14,14 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    CanMan
+                    <a href="http://www.dailymile.com/people/spaetzel" title="running apps"><img src="http://www.dailymile.com/images/badges/dailymile_badge_143x56_grey.png" width="143" height="56" alt="running apps" border="0" align="absmiddle"/></a> CanMan
                 </h1>
             </div>
            
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Enter Username"/>
+                        <asp:MenuItem NavigateUrl="~/" Text="Enter Username"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
                     </Items>
                 </asp:Menu>
